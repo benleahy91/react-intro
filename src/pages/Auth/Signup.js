@@ -112,7 +112,7 @@ class Signup extends Component {
         </form>
       </Auth>
     );
-  }
-}
+  };
+};
 
 export default Signup;

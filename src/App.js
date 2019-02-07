@@ -166,7 +166,7 @@ class App extends Component {
         <Redirect to="/" />
       </Switch>
     );
-    if (this.state.isAuth) {
+    if (this.state.isAuth) {			
       routes = (
         <Switch>
           <Route

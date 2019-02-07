@@ -29,7 +29,7 @@ class Login extends Component {
       let isValid = true;
       for (const validator of prevState.loginForm[input].validators) {
         isValid = isValid && validator(value);
-      }
+      };
       const updatedForm = {
         ...prevState.loginForm,
         [input]: {
@@ -102,7 +102,7 @@ class Login extends Component {
         </form>
       </Auth>
     );
-  }
-}
+  };
+};
 
 export default Login;

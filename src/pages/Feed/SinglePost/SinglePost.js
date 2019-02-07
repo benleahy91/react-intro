@@ -15,24 +15,24 @@ class SinglePost extends Component {
   componentDidMount() {
     const postId = this.props.match.params.postId;
     fetch('URL')
-      .then(res => {
-        if (res.status !== 200) {
-          throw new Error('Failed to fetch status');
-        }
-        return res.json();
-      })
-      .then(resData => {
-        this.setState({
-          title: resData.post.title,
-          author: resData.post.creator.name,
-          date: new Date(resData.post.createdAt).toLocaleDateString('en-US'),
-          content: resData.post.content
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
+		.then(res => {
+			if (res.status !== 200) {
+				throw new Error('Failed to fetch status');
+			};
+			return res.json();
+		})
+		.then(resData => {
+			this.setState({
+				title: resData.post.title,
+				author: resData.post.creator.name,
+				date: new Date(resData.post.createdAt).toLocaleDateString('en-US'),
+				content: resData.post.content
+			});
+		})
+		.catch(err => {
+			console.log(err);
+		});
+  };
 
   render() {
     return (
@@ -47,7 +47,7 @@ class SinglePost extends Component {
         <p>{this.state.content}</p>
       </section>
     );
-  }
-}
+  };
+};
 
 export default SinglePost;
